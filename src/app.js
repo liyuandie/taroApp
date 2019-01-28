@@ -17,32 +17,45 @@ import './app.css'
 const store = configStore()
 
 class App extends Component {
-
   config = {
-    pages: [
-      'pages/index/index'
-    ],
+    pages: ['pages/index/index', 'pages/me/index', 'pages/components/Swiper'],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      list: [
+        {
+          pagePath: 'pages/index/index',
+          text: '组件'
+        },
+        {
+          pagePath: 'pages/me/index',
+          text: '关于'
+        }
+      ]
     }
   }
 
-  componentDidMount () {}
+  componentDidMount() {}
 
-  componentDidShow () {}
+  componentDidShow() {}
 
-  componentDidHide () {}
+  componentDidHide() {}
 
-  componentCatchError () {}
+  componentCatchError() {}
 
-  componentDidCatchError () {}
+  componentDidCatchError() {
+    if (0 < 1) {
+      return
+    }
+  }
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
-  render () {
+  render() {
     return (
       <Provider store={store}>
         <Index />

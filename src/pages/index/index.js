@@ -1,52 +1,71 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Button, Text } from '@tarojs/components'
+import { View, Button, Text, ScrollView, Icon } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
-
-import { add, minus, asyncAdd } from '../../actions/counter'
+import * as counterActions from '../../actions/counter'
+import { btns } from '../../constants/btns'
 
 import './index.css'
 
-
-@connect(({ counter }) => ({
-  counter
-}), (dispatch) => ({
-  add () {
-    dispatch(add())
-  },
-  dec () {
-    dispatch(minus())
-  },
-  asyncAdd () {
-    dispatch(asyncAdd())
-  }
-}))
 class Index extends Component {
-
-    config = {
-    navigationBarTitleText: '首页'
+  config = {
+    navigationBarTitleText: 'Taro组件'
   }
 
-  componentWillReceiveProps (nextProps) {
+  componentWillReceiveProps(nextProps) {
     console.log(this.props, nextProps)
   }
 
-  componentWillUnmount () { }
+  componentWillUnmount() {}
 
-  componentDidShow () { }
+  componentDidShow() {}
 
-  componentDidHide () { }
+  componentDidHide() {}
 
-  render () {
+  onClick = url => {
+    console.log('111111111')
+    Taro.navigateTo({
+      url: url
+    })
+  }
+
+  render() {
     return (
-      <View className='index'>
-        <Button className='add_btn' onClick={this.props.add}>+</Button>
-        <Button className='dec_btn' onClick={this.props.dec}>-</Button>
-        <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
-        <View><Text>{this.props.counter.num}</Text></View>
-        <View><Text>Hello, World</Text></View>
-      </View>
+      <ScrollView>
+        <View className='col-box-center'>
+          <Icon size={60} type='search' className='logo' />
+          <Text className='slogan'>
+            Taro 以 微信小程序组件库 为标准，结合 jsx 语法规范，定制了一套自己的组件库规范。
+          </Text>
+        </View>
+        <View className='item-container'>
+          {btns.map(x => {
+            return (
+              <View
+                className='item'
+                hoverClass='item-hover'
+                hoverStayTime={200}
+                hoverStartTime={10}
+                taroKey={x.title}
+                onClick={this.onClick.bind(this, x.url)}
+              >
+                <Text className='title'>{x.title}</Text>
+                <Text className='subtitle'>{x.subtitle}</Text>
+              </View>
+            )
+          })}
+        </View>
+      </ScrollView>
     )
   }
 }
 
-export default Index
+const mapState2Props = state => {
+  return {
+    counter: state.counter
+  }
+}
+
+export default connect(
+  mapState2Props,
+  counterActions
+)(Index)

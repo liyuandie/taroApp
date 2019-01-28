@@ -1,0 +1,11 @@
+{
+  "javascript.implicitProjectConfig.experimentalDecorators": true,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "files.trimTrailingWhitespace": true,
+  "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
+  "javascript.format.insertSpaceAfterCommaDelimiter": true,
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "prettier.jsxSingleQuote": true
+}
