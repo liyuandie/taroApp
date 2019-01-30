@@ -1,10 +1,10 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import { View, Text, MovableArea, MovableView } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 
-class XXXX extends Component {
+class MovableView_ extends Component {
   config = {
-    navigationBarTitleText: 'XX'
+    navigationBarTitleText: 'MovableView'
   }
 
   componentWillReceiveProps(nextProps) {
@@ -20,9 +20,9 @@ class XXXX extends Component {
   render() {
     return (
       <View className='index'>
-        <View>
-          <Text>xxxxxxxxxxxx</Text>
-        </View>
+        <MovableArea style='height: 200px; width: 200px; background: red;'>
+          <MovableView style='height: 50px; width: 50px; background: blue;' direction='all' />
+        </MovableArea>
       </View>
     )
   }
@@ -37,4 +37,4 @@ const mapState2Props = state => {
 export default connect(
   mapState2Props,
   null
-)(XXXX)
+)(MovableView_)

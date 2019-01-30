@@ -1,10 +1,10 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import { View, Text, Video } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 
-class XXXX extends Component {
+class Video_ extends Component {
   config = {
-    navigationBarTitleText: 'XX'
+    navigationBarTitleText: 'Video'
   }
 
   componentWillReceiveProps(nextProps) {
@@ -20,9 +20,16 @@ class XXXX extends Component {
   render() {
     return (
       <View className='index'>
-        <View>
-          <Text>xxxxxxxxxxxx</Text>
-        </View>
+        <Video
+          src='https://v.qq.com/x/cover/brq7blajvjhrcit/r0029y3drka.html'
+          controls={true}
+          autoplay={false}
+          poster='http://misc.aotu.io/booxood/mobile-video/cover_900x500.jpg'
+          initialTime='0'
+          id='video'
+          loop={false}
+          muted={false}
+        />
       </View>
     )
   }
@@ -37,4 +44,4 @@ const mapState2Props = state => {
 export default connect(
   mapState2Props,
   null
-)(XXXX)
+)(Video_)

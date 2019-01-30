@@ -1,10 +1,10 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import { View, Text, Camera } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 
-class XXXX extends Component {
+class Camera_ extends Component {
   config = {
-    navigationBarTitleText: 'XX'
+    navigationBarTitleText: 'Camera'
   }
 
   componentWillReceiveProps(nextProps) {
@@ -21,7 +21,7 @@ class XXXX extends Component {
     return (
       <View className='index'>
         <View>
-          <Text>xxxxxxxxxxxx</Text>
+          <Text>系统相机</Text>
         </View>
       </View>
     )
@@ -37,4 +37,4 @@ const mapState2Props = state => {
 export default connect(
   mapState2Props,
   null
-)(XXXX)
+)(Camera_)

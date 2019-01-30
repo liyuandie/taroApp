@@ -1,10 +1,10 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import { View, Label, RadioGroup, Radio } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 
-class XXXX extends Component {
+class Label_ extends Component {
   config = {
-    navigationBarTitleText: 'XX'
+    navigationBarTitleText: 'Label'
   }
 
   componentWillReceiveProps(nextProps) {
@@ -20,9 +20,16 @@ class XXXX extends Component {
   render() {
     return (
       <View className='index'>
-        <View>
-          <Text>xxxxxxxxxxxx</Text>
-        </View>
+        <RadioGroup>
+          <Label className='example-body__label' for='1' key='1'>
+            <Radio value='USA'>USA</Radio>
+          </Label>
+          <Label className='example-body__label' for='2' key='2'>
+            <Radio value='CHN' checked>
+              CHN
+            </Radio>
+          </Label>
+        </RadioGroup>
       </View>
     )
   }
@@ -37,4 +44,4 @@ const mapState2Props = state => {
 export default connect(
   mapState2Props,
   null
-)(XXXX)
+)(Label_)

@@ -18,7 +18,29 @@ const store = configStore()
 
 class App extends Component {
   config = {
-    pages: ['pages/index/index', 'pages/me/index', 'pages/components/Swiper'],
+    pages: [
+      'pages/index/index',
+      'pages/me/index',
+      'pages/components/Swiper',
+      'pages/components/MovableView',
+      'pages/components/Icon',
+      'pages/components/Progress',
+      'pages/components/Form',
+      'pages/components/Input',
+      'pages/components/Label',
+      'pages/components/Button',
+      'pages/components/Radio',
+      'pages/components/CheckboxGroup',
+      'pages/components/Picker',
+      'pages/components/PickerView',
+      'pages/components/Slider',
+      'pages/components/Switch',
+      'pages/components/Textarea',
+      'pages/components/Audio',
+      'pages/components/Image',
+      'pages/components/Video',
+      'pages/components/Camera'
+    ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',

@@ -1,10 +1,10 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import { View, Text, Switch } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 
-class XXXX extends Component {
+class Switch_ extends Component {
   config = {
-    navigationBarTitleText: 'XX'
+    navigationBarTitleText: 'Switch'
   }
 
   componentWillReceiveProps(nextProps) {
@@ -20,9 +20,12 @@ class XXXX extends Component {
   render() {
     return (
       <View className='index'>
-        <View>
-          <Text>xxxxxxxxxxxx</Text>
-        </View>
+        <Text>默认样式</Text>
+        <Switch checked />
+        <Switch />
+        <Text>推荐展示样式</Text>
+        <Switch checked />
+        <Switch />
       </View>
     )
   }
@@ -37,4 +40,4 @@ const mapState2Props = state => {
 export default connect(
   mapState2Props,
   null
-)(XXXX)
+)(Switch_)
